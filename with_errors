@@ -2,6 +2,7 @@ JavaScript
 
 error_1) (크롬에서) 로컬에서 CORS policy 관련 에러가 발생하는 경우!
 
+-> Access to script at 'file:///C:/경로/js/module.js' from origin 'null' has been blocked by CORS policy: Cross origin requests are only supported for protocol schemes: http, data, chrome, chrome-extension, https.
 -> Requests Headers에서 origin 값이 null로 보내짐.
 
 conclusion_1-1) API 서버에서 "Access-Control-Allow-Origin : *"을 추가해주지 않으면, 크롬에서 "file://" URL로 API 데이터를 받아올 수 없음.
