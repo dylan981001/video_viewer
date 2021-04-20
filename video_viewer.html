@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title></title>
+
+        <!-- Ignite UI for jQuery Required Combined CSS Files -->
+        <link href="http://cdn-na.infragistics.com/igniteui/2020.2/latest/css/themes/infragistics/infragistics.theme.css" rel="stylesheet" />
+        <link href="http://cdn-na.infragistics.com/igniteui/2020.2/latest/css/structure/infragistics.css" rel="stylesheet" />
+
+        <script src="http://ajax.aspnetcdn.com/ajax/modernizr/modernizr-2.8.3.js"></script>
+        <script src="http://code.jquery.com/jquery-1.11.3.min.js"></script>
+        <script src="http://code.jquery.com/ui/1.11.1/jquery-ui.min.js"></script>
+
+        <!-- Ignite UI for jQuery Required Combined JavaScript Files -->
+        <script src="http://cdn-na.infragistics.com/igniteui/2020.2/latest/js/infragistics.core.js"></script>
+        <script src="http://cdn-na.infragistics.com/igniteui/2020.2/latest/js/infragistics.lob.js"></script>
+        <script>
+            var bookmarks = [];
+            var json = $.getJSON('mbcsports15fps.json');
+
+            for(var key in json){
+                bookmarks.push({
+                    title: 'Event',
+                    description: 'Infragistics design presentation',
+                    time: json[key]
+                })
+            }
+
+        </script>
+    </head>
+    <body>
+        <div id="video_player"></div>
+
+        <script>
+            $(function () {
+                $("#video_player").igVideoPlayer({
+                    sources: [
+                        'mbcsports.mp4',
+                    ],
+                    width: "100%",
+                    fullscreen: false,
+                    browserControls: false,
+                    autohide: false,
+                    autoplay: false,
+                    autohideDelay: 2000,
+                    title: 'Baseball game Highlights by DANLab.',
+                    bookmarks: bookmarks
+                });
+            });
+        </script>
+    </body>
+</html>
